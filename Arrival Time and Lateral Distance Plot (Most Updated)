@@ -2,15 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.rcParams['figure.dpi'] = 400
 
-sd_low_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/sd_low.npz")
-sd_mid_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/sd_mid.npz")
-sd_high_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/sd_high.npz")
-pro_low_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/proton_low.npz")
-pro_mid_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/proton_mid.npz")
-pro_high_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/proton_high.npz")
-iro_low_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/iron_low.npz")
-iro_mid_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/iron_mid.npz")
-iro_high_en = np.load("/ceph/work/SATORI/projects/TA-ASIoP/sd_waveform/iron_high.npz")
+sd_low_en = np.load("xxxxxxx/sd_waveform/sd_low.npz")
+sd_mid_en = np.load("xxxxxxx/sd_waveform/sd_mid.npz")
+sd_high_en = np.load("xxxxxx/sd_waveform/sd_high.npz")
+pro_low_en = np.load("xxxxxx/sd_waveform/proton_low.npz")
+pro_mid_en = np.load("xxxxxx/sd_waveform/proton_mid.npz")
+pro_high_en = np.load("xxxxxx/sd_waveform/proton_high.npz")
+iro_low_en = np.load("xxxxxxx/sd_waveform/iron_low.npz")
+iro_mid_en = np.load("xxxxxx/sd_waveform/iron_mid.npz")
+iro_high_en = np.load("xxxxxx/sd_waveform/iron_high.npz")
 
 #####
 sd_arr_lowen_up_arr = sd_low_en["up_arrival_out"]
