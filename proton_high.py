@@ -123,7 +123,7 @@ for i in range(9999):
                                     switch_low = False
                                     curr_state = 0
                                     if prev_state == 1 or prev_state == 2:
-                                        prev_state == 3
+                                        prev_state = 3
                                         if check == "during_up":
                                             check = "end_up"
                                         elif check == "during_low":
@@ -419,9 +419,13 @@ up_arrival_time_unfilterd = up_arrival_prior + up_arrival_later
 up_arrival_time = [x for x in up_arrival_time_unfilterd if x <= 12]
 low_arrival_time_unfilterd = low_arrival_prior + low_arrival_later
 low_arrival_time = [x for x in low_arrival_time_unfilterd if x <= 12]
-arrival_log_bins = np.logspace(np.log10(1), np.log10(12), 12)
-up_arrival_out = [[bin_value, np.sum((up_arrival_time > (bin_value - 1)) & (up_arrival_time <= bin_value))] for bin_value in arrival_log_bins]
-low_arrival_out = [[bin_value, np.sum((low_arrival_time > (bin_value - 1)) & (low_arrival_time <= bin_value))] for bin_value in arrival_log_bins]
+arrival_log_bins = np.logspace(np.log10(0.1), np.log10(12), 12)
+counts_up, edges_up = np.histogram(up_arrival_time, bins=arrival_log_bins)
+centers_up = np.sqrt(edges_up[1:] * edges_up[:-1])  
+up_arrival_out = [[centers_up[i], counts_up[i]] for i in range(len(counts_up))]
+counts_low, edges_low = np.histogram(low_arrival_time, bins=arrival_log_bins)
+centers_low = np.sqrt(edges_low[1:] * edges_low[:-1])
+low_arrival_out = [[centers_low[i], counts_low[i]] for i in range(len(counts_low))]
 
 
 
